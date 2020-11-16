@@ -1,0 +1,32 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  width: 100vw;
+  background-color: #344e41;
+  color: #ffffff;
+}
+
+#navLogo {
+  font-family: 'Bungee', cursive, sans-serif;
+  font-size: 2em;
+  margin: 1.5em;
+}
+
+#navNewTweet {
+  margin: 1.5em;
+}
+
+#navTweet {
+  display: block;
+}
+
+#doubleDownArrow {
+  width: 1em;
+  height: 1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  filter: invert(100%);
+}

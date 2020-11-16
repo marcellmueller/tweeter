@@ -1,0 +1,19 @@
+header {
+  height: 400px;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 5fr 1fr 5fr;
+  grid-template-rows: 6fr 1fr;
+  background-color: #588157;
+  color: #ffffff;
+  background-image: url('../images/black-twill.png');
+}
+
+#userIcon {
+  grid-column: 2;
+  grid-row: 2;
+}
+#profileName {
+  grid-column: 2;
+  grid-row: 3;
+}
