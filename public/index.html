@@ -62,22 +62,35 @@
             id="tweet-text"
             placeholder="What are you humming about?"
           ></textarea>
-          <div id="newTweetFooter">
-            <button id="newTweet" type="submit">Tweet</button>
+          <div id="new-tweet-footer">
+            <button id="new-tweet" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
 
       <article class="tweets">
-        <header class="articleTweetHeader">header</header>
-        <main class="articleTweetMain">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, nemo?
-          Quos et doloremque, excepturi minima cumque ab. Nam odit molestiae
-          provident ab itaque dignissimos nobis, minus voluptatum ut corrupti
-          facere.
+        <header class="article-tweet-header">
+          <h5 class="tweet-header-username">
+            <img class="user-icon" src="images/user.png" /> Marcel Mueller
+          </h5>
+          <h5 class="tweet-header-email">mlmueller@protonmail.com</h5>
+        </header>
+        <main class="article-tweet-main">
+          <div id="article-tweet-content">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Consequatur, dolore!
+          </div>
         </main>
-        <footer class="articleTweetFooter">footer</footer>
+
+        <footer class="article-tweet-footer">
+          <h6 id="article-tweet-date">4 hours ago</h6>
+          <h6 id="article-tweet-likes">
+            <img id="tweet-report" src="images/report.png" />
+            <img id="tweet-retweet" src="images/retweet.png" />
+            <img id="tweet-heart" src="images/heart.png" />
+          </h6>
+        </footer>
       </article>
     </main>
   </body>

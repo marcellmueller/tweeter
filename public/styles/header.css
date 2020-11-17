@@ -1,5 +1,5 @@
 .headerDiv {
-  height: 400px;
+  height: 500px;
   width: 100vw;
   display: grid;
   grid-template-columns: 5fr 1fr 5fr;
