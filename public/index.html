@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -50,31 +51,18 @@
       </div>
     </header>
 
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form method="POST" action="/tweets/">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div>
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-
     <!-- Page-specific (main) content here -->
     <main class="container">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque quis
-      eaque, autem dicta totam animi maxime ullam magnam, nostrum sequi, dolorem
-      nisi nemo? Numquam placeat dolores pariatur assumenda magnam et veniam ut
-      tenetur dolorum! Eius sapiente sunt ratione incidunt culpa eum soluta,
-      optio consequuntur facere eligendi earum tenetur, porro similique.
-      Aspernatur rerum, nobis eveniet cumque facilis aliquam tenetur ab, magni
-      odit labore numquam dolorum possimus iusto dolorem temporibus, quos
-      laborum asperiores laudantium repudiandae? Voluptatibus maiores
-      consectetur eaque tempora veritatis a asperiores incidunt mollitia
-      accusamus! Cumque rerum odio, ullam minima laboriosam enim, quae, commodi
-      dolore veniam nemo molestiae asperiores facere at.
+      <section class="new-tweet">
+        <form class="new-tweet-content" method="POST" action="/tweets/">
+          <label for="tweet-text"></label>
+          <input type="text" name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <div id="newTweetFooter">
+            <button id="newTweet" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
