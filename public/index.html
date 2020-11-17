@@ -16,12 +16,11 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,700&display=swap"
@@ -56,13 +55,34 @@
       <section class="new-tweet">
         <form class="new-tweet-content" method="POST" action="/tweets/">
           <label for="tweet-text"></label>
-          <input type="text" name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <textarea
+            type="text"
+            name="text"
+            maxlength="140"
+            id="tweet-text"
+            placeholder="What are you humming about?"
+          ></textarea>
           <div id="newTweetFooter">
             <button id="newTweet" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
+
+      <article class="tweets">
+        <header class="articleTweetHeader">header</header>
+        <main class="articleTweetMain">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, nemo?
+          Quos et doloremque, excepturi minima cumque ab. Nam odit molestiae
+          provident ab itaque dignissimos nobis, minus voluptatum ut corrupti
+          facere.
+        </main>
+        <footer class="articleTweetFooter">footer</footer>
+      </article>
     </main>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script type="module" src="scripts/client.js"></script>
+  <script type="module" src="scripts/composer-char-counter.js"></script>
 </html>
