@@ -32,6 +32,7 @@
 }
 .article-tweet-main {
   grid-row: 2;
+  width: 95%;
   max-height: 4px;
   padding-left: 1em;
   padding-right: 1em;
