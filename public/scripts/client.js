@@ -55,6 +55,8 @@ $('.new-tweet-content').on('submit', function (e) {
     textInput !== undefined
   ) {
     $('#error-box').slideUp();
+    $('.new-tweet').slideUp('slow');
+
     $.ajax({
       url: '/tweets/',
       type: 'POST',
@@ -67,6 +69,9 @@ $('.new-tweet-content').on('submit', function (e) {
   }
 });
 
+$('#nav-new-tweet').click(function () {
+  $('.new-tweet').slideDown();
+});
 const errorHandler = (errorText) => {
   $('#error-box').text(errorText).slideDown();
 };
@@ -80,4 +85,20 @@ const getTweets = () => {
     renderTweets(sortTweets(data));
   });
 };
+
+//-- Start code for bottom right scroll up button
+$(document).scroll(function () {
+  let y = $(this).scrollTop();
+  if (y > 200) {
+    $('#scroll-up').fadeIn();
+  } else {
+    $('#scroll-up').fadeOut();
+  }
+});
+
+$('#scroll-up').click(function () {
+  window.scrollTo(0, 0);
+});
+//-- End code for bottom right scroll up button
+
 window.onload = getTweets();

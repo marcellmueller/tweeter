@@ -5,6 +5,7 @@
  */
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -21,6 +22,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   width: 100vw;
+  position: relative;
   font-family: 'Source Sans Pro', sans-serif;
 }
 

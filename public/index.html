@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/scroll.css" type="text/css" />
 
     <!-- External JS -->
 
@@ -31,15 +32,16 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span id="navLogo">tweeter</span>
-      <span id="navNewTweet">
-        <span class="navTweet"></span>
-          <span class="navTweet">Write a new tweet</span>
-          <img id="doubleDownArrow" src="images/doubleDown.png" />
+      <span id="nav-logo">tweeter</span>
+      <span id="nav-new-tweet">
+        <span class="nav-new-tweet"></span>
+          <span class="nav-tweet">Write a new tweet</span>
+          <img id="double-down-arrow" src="images/doubleDown.png" />
         </span>
       </span>
     </nav>
 
+    <!-- User header -->
     <header class="headerDiv">
       <div id="userIcon">
         <img src="/images/profile-hex.png" />
@@ -51,6 +53,7 @@
     </header>
     <div id="error-box"></div>
 
+    <!-- New tweet box, inits with display: none; -->
     <section class="new-tweet">
       <form class="new-tweet-content" method="POST" action="/tweets/">
         <textarea
@@ -66,8 +69,13 @@
         </div>
       </form>
     </section>
-    <!-- Page-specific (main) content here -->
+
+    <!-- Empty main section we append tweets to -->
     <main id="tweeter-main" class="container"></main>
+    
+    <!-- Scroll up nav, inits with display: none; -->
+    <div id="scroll-up"><img id="double-up-arrow" src="images/doubleDown.png"></div>
+ 
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script

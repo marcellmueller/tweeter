@@ -7,24 +7,45 @@ nav {
   width: 100vw;
   background-color: #344e41;
   color: #ffffff;
+  z-index: 999;
 }
 
-#navLogo {
+#nav-logo {
   font-family: 'Bungee', cursive, sans-serif;
   font-size: 2em;
   margin: 1.5em;
 }
 
-#navNewTweet {
+#nav-new-tweet {
   margin: 1.5em;
+  cursor: pointer;
 }
 
-#navTweet {
+#nav-new-tweet:hover {
+  transform: scale(1.2);
+  transition: transform 0.6s ease;
+}
+
+#nav-new-tweet:hover #double-down-arrow {
+  animation: bounce 0.5s infinite;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 12px, 0);
+  }
+}
+#nav-tweet {
   display: block;
-  cursor: none;
+  user-select: none;
 }
 
-#doubleDownArrow {
+#double-down-arrow {
   width: 1em;
   height: 1em;
   display: block;
