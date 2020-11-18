@@ -4,6 +4,7 @@
   display: grid;
   grid-template-rows: 1fr 3fr 1fr;
   height: 220px;
+  margin-bottom: 1em;
   border-style: solid;
 }
 
@@ -52,10 +53,12 @@
 .tweet-header-email {
   display: none;
 }
-#article-tweet-date {
-  padding-left: 1em;
+.article-tweet-date {
+  padding-left: 2em;
 }
-#article-tweet-likes {
+
+.article-tweet-likes {
+  margin-top: 1.5em;
   width: 80px;
   grid-column: 3;
   text-align: right;

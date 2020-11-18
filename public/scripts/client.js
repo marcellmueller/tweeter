@@ -31,7 +31,7 @@ const renderTweets = function (tweets) {
     const headerContainer = $(`<header class="article-tweet-header"></header>`);
     const mainContainer = $(`<main class="article-tweet-main"></main>`);
     const footerContainer = $(`<footer class="article-tweet-footer"></footer>`);
-    const likesContainer = $(`<div  id="article-tweet-likes"></div>`);
+    const likesContainer = $(`<div class="article-tweet-likes"></div>`);
     const report = $(`<img id="tweet-report" src="images/report.png"></div>`);
     const retweet = $(
       `<img id="tweet-retweet" src="images/retweet.png"></div>`
@@ -64,7 +64,7 @@ const renderTweets = function (tweets) {
     );
     $(articleContainer).append(headerContainer, mainContainer, footerContainer);
     $(headerContainer).append(name, handle);
-    $(name).append(avatar);
+    $(name).prepend(avatar);
     $(mainContainer).append(content);
     $(footerContainer).append(date, likesContainer);
     $(likesContainer).append(report, retweet, heart);
@@ -75,7 +75,7 @@ const renderTweets = function (tweets) {
 };
 
 const createTweetElement = function (tweet, type, className) {
-  let $tweet = '';
+  let $tweet = '2';
   if (type === 'img') {
     $tweet = $(`<${type} class="${className}" src="${tweet}">`);
   } else {
