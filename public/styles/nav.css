@@ -21,6 +21,7 @@ nav {
 
 #navTweet {
   display: block;
+  cursor: none;
 }
 
 #doubleDownArrow {

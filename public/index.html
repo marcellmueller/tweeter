@@ -33,9 +33,9 @@
     <nav>
       <span id="navLogo">tweeter</span>
       <span id="navNewTweet">
-        <span class="navTweet">Write a new tweet</span>
-        <span class="navTweet"
-          ><img id="doubleDownArrow" src="images/doubleDown.png" />
+        <span class="navTweet"></span>
+          <span class="navTweet">Write a new tweet</span>
+          <img id="doubleDownArrow" src="images/doubleDown.png" />
         </span>
       </span>
     </nav>
@@ -49,26 +49,25 @@
         <h2>Marcel Mueller</h2>
       </div>
     </header>
+    <div id="error-box"></div>
 
+    <section class="new-tweet">
+      <form class="new-tweet-content" method="POST" action="/tweets/">
+        <textarea
+          type="text"
+          name="text"
+          maxlength="140"
+          id="tweet-text"
+          placeholder="What are you humming about?"
+        ></textarea>
+        <div id="new-tweet-footer">
+          <button id="new-tweet" type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
     <!-- Page-specific (main) content here -->
-    <main id="tweeter-main" class="container">
-      <section class="new-tweet">
-        <form class="new-tweet-content" method="POST" action="/tweets/">
-          <label for="tweet-text"></label>
-          <textarea
-            type="text"
-            name="text"
-            maxlength="140"
-            id="tweet-text"
-            placeholder="What are you humming about?"
-          ></textarea>
-          <div id="new-tweet-footer">
-            <button id="new-tweet" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-    </main>
+    <main id="tweeter-main" class="container"></main>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script
