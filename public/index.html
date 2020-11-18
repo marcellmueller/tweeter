@@ -51,7 +51,7 @@
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main id="tweeter-main" class="container">
       <section class="new-tweet">
         <form class="new-tweet-content" method="POST" action="/tweets/">
           <label for="tweet-text"></label>
@@ -68,34 +68,9 @@
           </div>
         </form>
       </section>
-
-      <article class="tweets">
-        <header class="article-tweet-header">
-          <h5 class="tweet-header-username">
-            <img class="user-icon" src="images/user.png" /> Marcel Mueller
-          </h5>
-          <h5 class="tweet-header-email">mlmueller@protonmail.com</h5>
-        </header>
-        <main class="article-tweet-main">
-          <div id="article-tweet-content">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consequatur, dolore!
-          </div>
-        </main>
-
-        <footer class="article-tweet-footer">
-          <h6 id="article-tweet-date">4 hours ago</h6>
-          <h6 id="article-tweet-likes">
-            <img id="tweet-report" src="images/report.png" />
-            <img id="tweet-retweet" src="images/retweet.png" />
-            <img id="tweet-heart" src="images/heart.png" />
-          </h6>
-        </footer>
-      </article>
     </main>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-  <script type="module" src="scripts/client.js"></script>
-  <script type="module" src="scripts/composer-char-counter.js"></script>
+  <script src="scripts/composer-char-counter.js"></script>
+  <script src="scripts/client.js"></script>
 </html>
