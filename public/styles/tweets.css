@@ -43,7 +43,7 @@
   grid-row: 3;
   display: grid;
   margin-top: 2em;
-  grid-template-columns: 1fr 6fr 1fr;
+  grid-template-columns: 1fr 4fr 1fr;
 }
 
 #article-tweet-email {
@@ -63,7 +63,6 @@
   grid-column: 3;
   text-align: right;
   display: grid;
-  padding-right: 1em;
   grid-template-columns: 1fr 1fr 1fr;
 }
 

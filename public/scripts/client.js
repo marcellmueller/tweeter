@@ -1,4 +1,3 @@
-// Fake data taken from initial-tweets.json
 const data = [
   {
     user: {
@@ -25,8 +24,11 @@ const data = [
   },
 ];
 
+const timeSince = (time) => {};
+
 const renderTweets = function (tweets) {
   for (const tweet in tweets) {
+    const newDate = moment(tweets[tweet].created_at).fromNow();
     const articleContainer = $(`<article class="tweets"></article>`);
     const headerContainer = $(`<header class="article-tweet-header"></header>`);
     const mainContainer = $(`<main class="article-tweet-main"></main>`);
@@ -37,31 +39,19 @@ const renderTweets = function (tweets) {
       `<img id="tweet-retweet" src="images/retweet.png"></div>`
     );
     const heart = $(`<img id="tweet-heart" src="images/heart.png"></div>`);
-    const name = createTweetElement(
-      tweets[tweet].user.name,
-      'h5',
-      'tweet-header-username'
+    const name = $(
+      `<h5 class="tweet-header-username">${tweets[tweet].user.name}</h5>`
     );
-    const avatar = createTweetElement(
-      tweets[tweet].user.avatars,
-      'img',
-      'user-icon'
+    const avatar = $(
+      `<img class="user-icon" src="${tweets[tweet].user.avatars}"></div>`
     );
-    const handle = createTweetElement(
-      tweets[tweet].user.handle,
-      'h5',
-      'tweet-header-email'
+    const handle = $(
+      `<h5 class="tweet-header-email">${tweets[tweet].user.handle}</h5>`
     );
-    const content = createTweetElement(
-      tweets[tweet].content.text,
-      'div',
-      'article-tweet-content'
+    const content = $(
+      `<div class="article-tweet-content">${tweets[tweet].content.text}</div>`
     );
-    const date = createTweetElement(
-      tweets[tweet].created_at,
-      'h6',
-      'article-tweet-date'
-    );
+    const date = $(`<h6 class="article-tweet-date">${newDate}</h6>`);
     $(articleContainer).append(headerContainer, mainContainer, footerContainer);
     $(headerContainer).append(name, handle);
     $(name).prepend(avatar);
@@ -72,16 +62,6 @@ const renderTweets = function (tweets) {
     console.log(articleContainer);
     $(main).append(articleContainer);
   }
-};
-
-const createTweetElement = function (tweet, type, className) {
-  let $tweet = '2';
-  if (type === 'img') {
-    $tweet = $(`<${type} class="${className}" src="${tweet}">`);
-  } else {
-    $tweet = $(`<${type} class="${className}">${tweet}</${type}>`);
-  }
-  return $tweet;
 };
 
 window.onload = renderTweets(data);
