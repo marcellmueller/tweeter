@@ -2,7 +2,9 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+## Heroku test version
+
+https://marcelmueller-tweeter.herokuapp.com/
 
 ## Getting Started
 
@@ -13,5 +15,12 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
+### NPM Dependencies
+
 - Express
 - Node 5.10.x or above
+
+### CDN Dependencies
+
+- jQuery 3.4.1 min
+- Moment.js 2.29.1
