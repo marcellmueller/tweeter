@@ -91,6 +91,8 @@ $(document).scroll(function () {
 
 $('#scroll-up').click(function () {
   window.scrollTo(0, 0);
+  $('.new-tweet').slideDown();
+  $('#nav-new-tweet').fadeOut();
 });
 //-- End code for bottom right scroll up button
 
