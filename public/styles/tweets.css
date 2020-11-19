@@ -9,7 +9,7 @@
   border-style: solid;
 }
 
-.tweets:hover .tweet-header-email {
+.tweets:hover .article-tweet-likes {
   display: block;
 }
 
@@ -44,29 +44,32 @@
   grid-row: 3;
   display: grid;
   margin-top: 2em;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
 }
 
 #article-tweet-email {
   grid-column: 1;
 }
 
-.tweet-header-email {
-  display: none;
-}
 .article-tweet-date {
-  padding-left: 2em;
+  padding-left: 1em;
+  white-space: nowrap;
 }
 
 .article-tweet-likes {
   margin-top: 1.5em;
   width: 80px;
   grid-column: 3;
-  margin-left: 4em;
   text-align: right;
+  margin-left: 10em;
+  margin-right: 10px;
   display: grid;
   margin-bottom: 2em;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.likes-hide {
+  display: none;
 }
 
 #tweet-report {

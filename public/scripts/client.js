@@ -5,7 +5,9 @@ const renderTweets = function (tweets) {
     const headerContainer = $(`<header class="article-tweet-header"></header>`);
     const mainContainer = $(`<main class="article-tweet-main"></main>`);
     const footerContainer = $(`<footer class="article-tweet-footer"></footer>`);
-    const likesContainer = $(`<div class="article-tweet-likes"></div>`);
+    const likesContainer = $(
+      `<div class="article-tweet-likes likes-hide"></div>`
+    );
     const report = $(`<img id="tweet-report" src="images/report.png"></div>`);
     const retweet = $(
       `<img id="tweet-retweet" src="images/retweet.png"></div>`
@@ -42,9 +44,9 @@ $('.new-tweet-content').on('submit', function (e) {
   const formData = $('.new-tweet-content').serialize();
   //Tweet submit error handling
   if (textInput.length < 1) {
-    errorHandler('Error: This tweet is empty');
+    errorHandler('You have to write something first!');
   } else if (textInput.length > 140) {
-    errorHandler('Error: This tweet is over 140 characters');
+    errorHandler('This tweet is over 140 characters');
   } else if (textInput === null) {
     errorHandler('Error: Undefined entry');
   } else if (
@@ -57,11 +59,14 @@ $('.new-tweet-content').on('submit', function (e) {
     $('#error-box').slideUp();
     $('.new-tweet').slideUp('slow');
 
-    $.ajax({
-      url: '/tweets/',
-      type: 'POST',
-      data: formData,
-    });
+    $.post('/tweets/', formData)
+      .then(() => {
+        getTweets();
+      })
+      .then(() => $('#tweet-text').val(''))
+      .then(() => $('#counter').val(140));
+
+    $('#nav-new-tweet').fadeIn();
     $('#tweeter-main').empty();
     getTweets();
   } else {
@@ -71,6 +76,7 @@ $('.new-tweet-content').on('submit', function (e) {
 
 $('#nav-new-tweet').click(function () {
   $('.new-tweet').slideDown();
+  $('#nav-new-tweet').fadeOut();
 });
 const errorHandler = (errorText) => {
   $('#error-box').text(errorText).slideDown();
