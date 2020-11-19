@@ -2,6 +2,8 @@
   height: 500px;
   width: 100vw;
   display: grid;
+  text-align: center;
+  padding-top: 2em;
   grid-template-columns: 5fr 1fr 5fr;
   grid-template-rows: 6fr 1fr;
   background-color: #588157;
