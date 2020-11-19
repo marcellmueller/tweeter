@@ -37,3 +37,108 @@ main {
   margin-left: auto;
   margin-right: auto;
 }
+
+@media (min-width: 740px) {
+  #header-div {
+    position: fixed;
+    display: inline;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    width: 30vw;
+    height: 466px;
+    margin: 1vw;
+    margin-top: 16vw;
+  }
+
+  .new-tweet {
+    margin-top: 1vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .user-icon {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  #main-parent {
+    display: inline-block;
+    margin-top: 14vw;
+    margin-right: 5vw;
+    float: right;
+    width: 63vw;
+  }
+  main {
+    width: 65vw;
+  }
+}
+
+@media (min-width: 1281px) {
+  #header-div {
+    position: fixed;
+    display: inline;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    width: 24vw;
+    height: 474px;
+    margin: 5vw;
+    margin-top: 8.5vw;
+  }
+
+  .new-tweet {
+    margin-top: 1vw;
+  }
+
+  .user-icon {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  .profile-name {
+  }
+  #main-parent {
+    display: inline-block;
+    margin-top: 7vw;
+    margin-right: 5vw;
+    float: right;
+    width: 63vw;
+  }
+  main {
+    width: 65vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  #header-div {
+    position: fixed;
+    display: inline;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    width: 24vw;
+    height: 474px;
+    margin: 5vw;
+    margin-top: 8.5vw;
+  }
+
+  .new-tweet {
+    margin-top: 1vw;
+  }
+
+  .user-icon {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  .profile-name {
+  }
+  #main-parent {
+    display: inline-block;
+    margin-top: 7vw;
+    margin-right: 5vw;
+    float: right;
+    width: 63vw;
+  }
+  main {
+    width: 65vw;
+  }
+}

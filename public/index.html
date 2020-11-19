@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta Information -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
@@ -42,18 +42,20 @@
     </nav>
 
     <!-- User header -->
-    <header class="headerDiv">
-      <div id="userIcon">
+    <header class="header-div" id="header-div">
+      <div id="user-icon">
         <img src="/images/profile-hex.png" />
       </div>
       <br />
-      <div id="profileName">
+      <div id="profile-name">
         <h2>Marcel Mueller</h2>
       </div>
     </header>
-    <div id="error-box"></div>
 
     <!-- New tweet box, inits with display: none; -->
+   <section id="main-parent">
+    <div id="error-box"></div>
+
     <section class="new-tweet">
       <form class="new-tweet-content" method="POST" action="/tweets/">
         <textarea
@@ -73,7 +75,7 @@
 
     <!-- Empty main section we append tweets to -->
     <main id="tweeter-main" class="container"></main>
-    
+  </section>
     <!-- Scroll up nav, inits with display: none; -->
     <div id="scroll-up"><img id="double-up-arrow" src="images/doubleDown.png"></div>
  
@@ -86,5 +88,5 @@
   ></script>
   <script type="module" src="scripts/composer-char-counter.js"></script>
   <script type="module" src="scripts/client.js"></script>
-  <script type="module" src="scripts/scroll.js"></script>
+  <script type="module" src="scripts/click-handlers.js"></script>
   </html>

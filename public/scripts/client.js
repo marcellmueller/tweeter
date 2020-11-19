@@ -61,10 +61,6 @@ $('.new-tweet-content').on('submit', function (e) {
   }
 });
 
-$('#nav-new-tweet').click(function () {
-  $('.new-tweet').slideDown();
-  $('#nav-new-tweet').fadeOut();
-});
 const errorHandler = (errorText) => {
   $('#error-box').text(errorText).slideDown();
 };

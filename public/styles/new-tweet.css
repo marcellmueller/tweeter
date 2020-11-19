@@ -1,5 +1,5 @@
 .new-tweet {
-  width: 90vw;
+  width: 90%;
   height: 200px;
   background-color: #f4f1ec;
   margin-bottom: 2em;
@@ -30,7 +30,7 @@
 #tweet-text {
   background-color: #f4f1ec;
   border: 0;
-  width: 90vw;
+  width: 90%;
   border-bottom: 6px solid black;
   outline: none;
   resize: none;
@@ -38,7 +38,7 @@
 }
 
 #new-tweet-footer {
-  width: 90vw;
+  width: 90%;
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
 }
