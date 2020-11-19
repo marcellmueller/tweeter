@@ -1,38 +1,25 @@
 const renderTweets = function (tweets) {
   for (const tweet in tweets) {
     const newDate = moment(tweets[tweet].created_at).fromNow();
-    const articleContainer = $(`<article class="tweets"></article>`);
-    const headerContainer = $(`<header class="article-tweet-header"></header>`);
-    const mainContainer = $(`<main class="article-tweet-main"></main>`);
-    const footerContainer = $(`<footer class="article-tweet-footer"></footer>`);
-    const likesContainer = $(
-      `<div class="article-tweet-likes likes-hide"></div>`
-    );
-    const report = $(`<img id="tweet-report" src="images/report.png"></div>`);
-    const retweet = $(
-      `<img id="tweet-retweet" src="images/retweet.png"></div>`
-    );
-    const heart = $(`<img id="tweet-heart" src="images/heart.png"></div>`);
-    const name = $(`<h5 class="tweet-header-username"></h5>`).text(
-      tweets[tweet].user.name
-    );
-    const avatar = $(`<img class="user-icon" ></div>`).attr(
-      'src',
-      tweets[tweet].user.avatars
-    );
-    const handle = $(`<h5 class="tweet-header-email"></h5>`).text(
-      tweets[tweet].user.handle
-    );
-    const content = $(`<div class="article-tweet-content"></div>`).text(
-      tweets[tweet].content.text
-    );
-    const date = $(`<h6 class="article-tweet-date"></h6>`).text(newDate);
-    $(articleContainer).append(headerContainer, mainContainer, footerContainer);
-    $(headerContainer).append(name, handle);
-    $(name).prepend(avatar);
-    $(mainContainer).append(content);
-    $(footerContainer).append(date, likesContainer);
-    $(likesContainer).append(report, retweet, heart);
+    const articleContainer = $(`<article class="tweets">
+    <header class="article-tweet-header">
+      <h5 class="tweet-header-username">
+      <img class="user-icon" src="${tweets[tweet].user.avatars}">
+      ${tweets[tweet].user.name}</h5>
+      <h5 class="tweet-header-email">${tweets[tweet].user.handle}</h5>
+    </header>
+    <main class="article-tweet-main">
+      <div class="article-tweet-content">${tweets[tweet].content.text}</div>
+    </main>
+    <footer class="article-tweet-footer">
+    <h6 class="article-tweet-date">${newDate}</h6>
+    <div class="article-tweet-likes likes-hide">
+      <img id="tweet-report" src="images/report.png">
+      <img id="tweet-retweet" src="images/retweet.png">
+      <img id="tweet-heart" src="images/heart.png">
+    </div></footer>
+    </article>`);
+
     const main = $('#tweeter-main').get(0);
     $(main).append(articleContainer);
   }
