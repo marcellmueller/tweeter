@@ -7,7 +7,7 @@ const renderTweets = function (tweets) {
     <header class="article-tweet-header">
       <h5 class="tweet-header-username">
       <img class="user-icon" src="${tweets[tweet].user.avatars}">
-      ${escape(tweets[tweet].user.name)}</h5>
+      ${tweets[tweet].user.name}</h5>
       <h5 class="tweet-header-email">${escape(tweets[tweet].user.handle)}</h5>
     </header>
     <main class="article-tweet-main">
@@ -21,11 +21,12 @@ const renderTweets = function (tweets) {
       <img id="tweet-heart" src="images/heart.png">
     </div></footer>
     </article>`);
-    //escape image links and content
-    $('.user-icon').attr('src', tweets[tweet].user.avatars);
-    $('.article-tweet-content').text(tweets[tweet].content.text);
     const main = $('#tweeter-main').get(0);
     $(main).append(articleContainer);
+    //escape image links and content
+    $('tweet-header-username').prepend(tweets[tweet].user.name);
+    $('.user-icon').attr('src', tweets[tweet].user.avatars);
+    $('.article-tweet-content').text(tweets[tweet].content.text);
   }
 };
 
