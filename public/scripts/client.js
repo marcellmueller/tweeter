@@ -61,7 +61,6 @@ $('.new-tweet-content').on('submit', function (e) {
 
     $('#nav-new-tweet').fadeIn();
     $('#tweeter-main').empty();
-    getTweets();
   } else {
     errorHandler('Error: Undefined entry');
   }
