@@ -2,6 +2,8 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
+![screenshot](https://github.com/marcellmueller/tweeter/blob/master/docs/img/screen.png)
+
 ## Heroku test version
 
 https://marcelmueller-tweeter.herokuapp.com/
