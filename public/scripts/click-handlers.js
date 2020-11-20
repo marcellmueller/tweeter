@@ -9,8 +9,10 @@ $('#nav-new-tweet').click(function () {
 $(document).scroll(function () {
   let y = $(this).scrollTop();
   if (y > 200) {
+    $('#nav-new-tweet').fadeOut();
     $('#scroll-up').fadeIn();
   } else {
+    $('#nav-new-tweet').fadeIn();
     $('#scroll-up').fadeOut();
   }
 });

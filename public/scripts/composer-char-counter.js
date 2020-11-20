@@ -1,3 +1,4 @@
+//-- Character counter listener
 $(document).ready(function () {
   $('#tweet-text').bind('input propertychange', function () {
     let update = 140 - this.value.length;

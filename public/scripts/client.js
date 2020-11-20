@@ -1,15 +1,17 @@
+//-- Dynamically render tweets
 const renderTweets = function (tweets) {
   for (const tweet in tweets) {
+    //use moment.js to put date in readable format
     const newDate = moment(tweets[tweet].created_at).fromNow();
     const articleContainer = $(`<article class="tweets">
     <header class="article-tweet-header">
       <h5 class="tweet-header-username">
       <img class="user-icon" src="${tweets[tweet].user.avatars}">
-      ${tweets[tweet].user.name}</h5>
-      <h5 class="tweet-header-email">${tweets[tweet].user.handle}</h5>
+      ${escape(tweets[tweet].user.name)}</h5>
+      <h5 class="tweet-header-email">${escape(tweets[tweet].user.handle)}</h5>
     </header>
     <main class="article-tweet-main">
-      <div class="article-tweet-content">${tweets[tweet].content.text}</div>
+      <div class="article-tweet-content"></div>
     </main>
     <footer class="article-tweet-footer">
     <h6 class="article-tweet-date">${newDate}</h6>
@@ -19,12 +21,15 @@ const renderTweets = function (tweets) {
       <img id="tweet-heart" src="images/heart.png">
     </div></footer>
     </article>`);
-
+    //escape image links and content
+    $('.user-icon').attr('src', tweets[tweet].user.avatars);
+    $('.article-tweet-content').text(tweets[tweet].content.text);
     const main = $('#tweeter-main').get(0);
     $(main).append(articleContainer);
   }
 };
 
+//-- Post new tweet form data and validation
 $('.new-tweet-content').on('submit', function (e) {
   e.preventDefault();
   const textInput = $('#tweet-text').val();
@@ -61,6 +66,7 @@ $('.new-tweet-content').on('submit', function (e) {
   }
 });
 
+//-- Call error handler slideDown
 const errorHandler = (errorText) => {
   $('#error-box').text(errorText).slideDown();
 };
@@ -69,6 +75,7 @@ const sortTweets = (tweets) => {
   tweets.sort((a, b) => b.created_at - a.created_at);
   return tweets;
 };
+
 const getTweets = () => {
   $.get('/tweets/', function (data) {
     renderTweets(sortTweets(data));
