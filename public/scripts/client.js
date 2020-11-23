@@ -1,32 +1,42 @@
 //-- Dynamically render tweets
-const renderTweets = function (tweets) {
-  for (const tweet in tweets) {
-    //use moment.js to put date in readable format
-    const newDate = moment(tweets[tweet].created_at).fromNow();
-    const articleContainer = $(`<article class="tweets">
-    <header class="article-tweet-header">
-      <h5 class="tweet-header-username">
-      <img class="user-icon" src="${tweets[tweet].user.avatars}">
-      ${tweets[tweet].user.name}</h5>
-      <h5 class="tweet-header-email">${escape(tweets[tweet].user.handle)}</h5>
-    </header>
-    <main class="article-tweet-main">
-      <div class="article-tweet-content"></div>
-    </main>
-    <footer class="article-tweet-footer">
-    <h6 class="article-tweet-date">${newDate}</h6>
-    <div class="article-tweet-likes likes-hide">
-      <img id="tweet-report" src="images/report.png">
-      <img id="tweet-retweet" src="images/retweet.png">
-      <img id="tweet-heart" src="images/heart.png">
-    </div></footer>
-    </article>`);
-    const main = $('#tweeter-main').get(0);
-    $(main).append(articleContainer);
-    //escape image links and content
-    $('tweet-header-username').prepend(tweets[tweet].user.name);
-    $('.user-icon').attr('src', tweets[tweet].user.avatars);
-    $('.article-tweet-content').text(tweets[tweet].content.text);
+const createTweet = function (tweet) {
+  const newDate = moment(tweet.created_at).fromNow();
+  const articleContainer = $(`<article class="tweets"></article>`);
+  const headerContainer = $(`<header class="article-tweet-header"></header>`);
+  const mainContainer = $(`<main class="article-tweet-main"></main>`);
+  const footerContainer = $(`<footer class="article-tweet-footer"></footer>`);
+  const likesContainer = $(`<div class="article-tweet-likes"></div>`);
+  const report = $(`<img id="tweet-report" src="images/report.png"></div>`);
+  const retweet = $(`<img id="tweet-retweet" src="images/retweet.png"></div>`);
+  const heart = $(`<img id="tweet-heart" src="images/heart.png"></div>`);
+  const name = $(`<h5 class="tweet-header-username"></h5>`).text(
+    tweet.user.name
+  );
+  const avatar = $(`<img class="user-icon" ></div>`).attr(
+    'src',
+    tweet.user.avatars
+  );
+  const handle = $(`<h5 class="tweet-header-email"></h5>`).text(
+    tweet.user.handle
+  );
+  const content = $(`<div class="article-tweet-content"></div>`).text(
+    tweet.content.text
+  );
+  const date = $(`<h6 class="article-tweet-date"></h6>`).text(newDate);
+  $(articleContainer).append(headerContainer, mainContainer, footerContainer);
+  $(headerContainer).append(name, handle);
+  $(name).prepend(avatar);
+  $(mainContainer).append(content);
+  $(footerContainer).append(date, likesContainer);
+  $(likesContainer).append(report, retweet, heart);
+  return articleContainer;
+};
+
+const renderTweets = (tweets) => {
+  const tweetsContainer = $('#tweeter-main').html('');
+  for (let tweet of tweets) {
+    let tweetElement = createTweet(tweet);
+    tweetsContainer.append(tweetElement);
   }
 };
 

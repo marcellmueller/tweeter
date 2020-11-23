@@ -6,11 +6,13 @@
   height: 220px;
   margin-top: 1em;
   margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
   border-style: solid;
 }
 
 .tweets:hover .article-tweet-likes {
-  display: block;
+  display: show;
 }
 
 .tweets:hover {
@@ -23,7 +25,7 @@
 }
 
 .tweet-header-username {
-  padding-left: 2em;
+  white-space: nowrap;
   grid-column: 1;
 }
 
@@ -54,6 +56,7 @@
 .article-tweet-date {
   padding-left: 1em;
   white-space: nowrap;
+  margin-left: 16px;
 }
 
 .article-tweet-likes {
@@ -62,7 +65,7 @@
   grid-column: 3;
   text-align: right;
   margin-left: 10em;
-  margin-right: 10px;
+  margin-right: 14px;
   display: grid;
   margin-bottom: 2em;
   grid-template-columns: 1fr 1fr 1fr;
@@ -91,8 +94,9 @@
   height: 20px;
 }
 .user-icon {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  margin-left: 30px;
 }
 
 #article-tweet-content {
@@ -100,7 +104,6 @@
   border: 0;
   height: 80px;
   border-bottom: 6px solid black;
-
   outline: none;
   resize: none;
   grid-row: 2;
